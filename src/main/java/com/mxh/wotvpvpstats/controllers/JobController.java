@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/jobs")
+@RequestMapping("/jobs")
 public class JobController {
 
     @Autowired

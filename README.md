@@ -1,7 +1,7 @@
 #Project to generate pvp stats according the player's input.
 
 ###Tables mapped
-[]Character
+[x]Character
 
 []Character Built
 
@@ -15,7 +15,7 @@
 
 []character equipment category
 
-[]character job
+[x]character job
 
 []confrontation
 
