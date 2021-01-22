@@ -55,7 +55,7 @@
 
 []support ability character built confrontation detail
 
-[]user
+[x]user
 
 []visioncard
 
