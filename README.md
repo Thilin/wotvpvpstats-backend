@@ -41,13 +41,13 @@
 
 []map
 
-[]oponent
+[x]oponent
 
 []oponent confrontation detail
 
-[]oponent formation
+[x]oponent formation
 
-[]oponent formation character
+[x]oponent formation character
 
 []reaction
 
