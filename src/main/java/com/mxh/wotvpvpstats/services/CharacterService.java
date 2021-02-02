@@ -10,9 +10,9 @@ public interface CharacterService {
     CharacterDTO findById(Long id);
     List<CharacterDTO> findAll();
 
-    CharacterBuildResponseDTO build(CharacterBuildDTO dto);
+    void build(CharacterBuildDTO dto);
 
     CharacterBuildResponseDTO findCharacterBuiltById(Long id);
 
-    List<CharacterBuildResponseDTO> findAllCharacterBuiltByUserId(Long id);
+//    List<CharacterBuildResponseDTO> findAllCharacterBuiltByUserId(Long id);
 }

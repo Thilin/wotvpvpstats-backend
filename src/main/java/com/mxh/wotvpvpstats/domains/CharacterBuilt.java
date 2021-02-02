@@ -28,4 +28,16 @@ public class CharacterBuilt {
     @OneToOne
     @JoinColumn(name = "CHB_USR_ID", referencedColumnName = "USR_ID")
     private User user;
+
+    @OneToOne
+    @JoinColumn(name = "CHB_VCD_ID", referencedColumnName = "VCD_ID")
+    private VisionCard visionCard;
+
+    @OneToOne
+    @JoinColumn(name = "CHB_ESP_ID", referencedColumnName = "ESP_ID")
+    private Esper esper;
+
+    @OneToOne
+    @JoinColumn(name = "CHB_REA_ID", referencedColumnName = "REA_ID")
+    private Reaction reaction;
 }

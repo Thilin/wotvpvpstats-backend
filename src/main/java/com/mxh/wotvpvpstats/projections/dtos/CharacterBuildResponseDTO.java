@@ -2,6 +2,8 @@ package com.mxh.wotvpvpstats.projections.dtos;
 
 import lombok.*;
 
+import java.util.List;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -10,10 +12,11 @@ import lombok.*;
 public class CharacterBuildResponseDTO {
 
     private String name;
-    private String user;
     private String character;
-//    private String visionCard;
-//    private String esper;
-//    private String reaction;
+    private String visionCard;
+    private String esper;
+    private String reaction;
+    private List<CharacterBuiltEquipmentResponseDTO> equipments;
+    private List<String> supportAbilities;
 
 }
