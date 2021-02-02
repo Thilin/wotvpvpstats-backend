@@ -22,6 +22,6 @@ public class OpponentFormation {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "TB_OPONENT_OPO_ID", referencedColumnName = "OPO_ID")
+    @JoinColumn(name = "OFO_OPO_ID", referencedColumnName = "OPO_ID")
     private Opponent opponent;
 }

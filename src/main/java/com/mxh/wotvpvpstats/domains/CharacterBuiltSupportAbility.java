@@ -25,6 +25,6 @@ public class CharacterBuiltSupportAbility {
     private CharacterBuilt characterBuilt;
 
     @ManyToOne
-    @JoinColumn(name = "CHS_SAB_ID")
+    @JoinColumn(name = "CSH_SAB_ID")
     private SupportAbility supportAbility;
 }
