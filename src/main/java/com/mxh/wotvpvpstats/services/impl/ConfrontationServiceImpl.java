@@ -8,6 +8,7 @@ import com.mxh.wotvpvpstats.projections.dtos.CreateConfrontationDTO;
 import com.mxh.wotvpvpstats.projections.dtos.ConfrontationResultDTO;
 import com.mxh.wotvpvpstats.projections.dtos.OpponentCompositionDTO;
 import com.mxh.wotvpvpstats.repositories.*;
+import com.mxh.wotvpvpstats.services.ConfrontationDetailService;
 import com.mxh.wotvpvpstats.services.ConfrontationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,8 @@ public class ConfrontationServiceImpl implements ConfrontationService {
 
     @Autowired
     ConfrontationRepository confrontationRepository;
+    @Autowired
+    ConfrontationDetailService confrontationDetailService;
 
     @Override
     public void create(Long userId, CreateConfrontationDTO dto) {
@@ -55,6 +58,8 @@ public class ConfrontationServiceImpl implements ConfrontationService {
         confrontation.setWin(dto.isWin());
         confrontation.setUser(user);
         confrontationRepository.save(confrontation);
+
+        confrontationDetailService.createDetails(confrontation);
 
     }
 

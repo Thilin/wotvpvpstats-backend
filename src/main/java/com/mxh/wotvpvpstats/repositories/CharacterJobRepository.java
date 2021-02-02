@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface CharacterJobRepository extends JpaRepository<CharacterJob, Long> {
     List<CharacterJob> findByCharacterId(Long id);
+
+    CharacterJob findByJobId(Long id);
 }

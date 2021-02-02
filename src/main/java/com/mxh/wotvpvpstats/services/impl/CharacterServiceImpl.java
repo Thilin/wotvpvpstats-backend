@@ -37,6 +37,10 @@ public class CharacterServiceImpl implements CharacterService {
     SupportAbilityRepository supportAbilityRepository;
     @Autowired
     CharacterBuiltSupportAbilityRepository characterBuiltSupportAbilityRepository;
+    @Autowired
+    JobRepository jobRepository;
+    @Autowired
+    CharacterBuiltJobRepository characterBuiltJobRepository;
 
     @Autowired
     CharacterBuiltRepository characterBuiltRepository;
@@ -122,6 +126,15 @@ public class CharacterServiceImpl implements CharacterService {
             characterBuiltSupportAbility.setCharacterBuilt(characterBuilt);
             characterBuiltSupportAbility.setSupportAbility(supportAbility);
             characterBuiltSupportAbilityRepository.save(characterBuiltSupportAbility);
+        });
+
+        dto.getJobsId().forEach(id ->{
+            var job = jobRepository.getOne(id);
+
+            var characterBuiltJob = new CharacterBuiltJob();
+            characterBuiltJob.setCharacterBuilt(characterBuilt);
+            characterBuiltJob.setCharacterJob(characterJobRepository.findByJobId(id));
+            characterBuiltJobRepository.save(characterBuiltJob);
         });
     }
 

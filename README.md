@@ -3,11 +3,49 @@
 ###Tables mapped
 [x]Character
 
-[]Character Built
+[x]Character Built
 
-[]Character built confrontation detail
+[x]Character built confrontation detail
 
-[]Character built equipment
+[x]Character built equipment
+
+[x]character job
+
+[x]confrontation
+
+[x]confrontation type
+
+[x]element
+
+[x]equipment
+
+[x]equipment category
+
+[x]equipment type
+
+[x]esper
+
+[x]formation
+
+[x]formation character built
+
+[x]job
+
+[x]map
+
+[x]oponent
+
+[x]oponent formation
+
+[x]oponent formation character
+
+[x]reaction
+
+[x]support ability
+
+[x]user
+
+[x]visioncard
 
 []Character built equipment confrontation detail
 
@@ -15,49 +53,11 @@
 
 []character equipment category
 
-[x]character job
-
-[]confrontation
-
-[]confrontation detail
-
-[]confrontation type
-
-[x]element
-
-[]equipment
-
-[]equipment category
-
-[]equipment type
-
-[]esper
-
-[]formation
-
-[]formation character built
-
-[x]job
-
-[]map
-
-[x]oponent
+[]support ability character built confrontation detail
 
 []oponent confrontation detail
 
-[x]oponent formation
-
-[x]oponent formation character
-
-[]reaction
-
-[]support ability
-
-[]support ability character built confrontation detail
-
-[x]user
-
-[]visioncard
+[]confrontation detail
 
 ---------------
 Funções Globais por Mapa:

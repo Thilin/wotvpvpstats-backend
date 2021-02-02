@@ -19,4 +19,6 @@ public class CharacterBuildDTO {
     private Long reactionId;
     private List<CharacterBuiltEquipmentDTO> equipmentsDTO;
     private List<Long> supportAbilitiesId;
+    private List<Long> jobsId;
+
 }
