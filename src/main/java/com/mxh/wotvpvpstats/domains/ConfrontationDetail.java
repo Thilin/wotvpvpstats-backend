@@ -21,12 +21,6 @@ public class ConfrontationDetail {
     @Column(name = "COD_POSITION")
     private Long position;
 
-    @Column(name = "COD_MAINJOB")
-    private String mainJob;
-
-    @Column(name = "COD_SECUNDARYJOB")
-    private String secundaryJob;
-
     @ManyToOne
     @JoinColumn(name = "COD_CON_ID")
     private Confrontation confrontation;

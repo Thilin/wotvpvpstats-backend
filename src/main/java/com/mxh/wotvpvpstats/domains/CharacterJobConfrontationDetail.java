@@ -1,9 +1,16 @@
 package com.mxh.wotvpvpstats.domains;
 
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_character_job_confrontation_detail")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class CharacterJobConfrontationDetail {
 
     @Id
