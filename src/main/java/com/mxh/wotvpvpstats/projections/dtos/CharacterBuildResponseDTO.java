@@ -18,5 +18,6 @@ public class CharacterBuildResponseDTO {
     private String reaction;
     private List<CharacterBuiltEquipmentResponseDTO> equipments;
     private List<String> supportAbilities;
+    private List<String> jobs;
 
 }

@@ -9,4 +9,6 @@ public interface CharacterJobRepository extends JpaRepository<CharacterJob, Long
     List<CharacterJob> findByCharacterId(Long id);
 
     CharacterJob findByJobId(Long id);
+
+    CharacterJob findByJobIdAndCharacterId(Long jobId, Long characterId);
 }
