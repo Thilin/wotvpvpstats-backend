@@ -19,4 +19,6 @@ public interface OpponentFormationCharacterRepository extends JpaRepository<Oppo
     List<OpponentsCharactersFoundDTO> countDistinct();
 
     List<OpponentFormationCharacter> findAllByOpponentFormationId(Long id);
+
+    List<OpponentFormationCharacter> findByOpponentFormationId(Long id);
 }

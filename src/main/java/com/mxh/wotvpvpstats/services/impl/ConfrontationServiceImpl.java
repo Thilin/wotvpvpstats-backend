@@ -60,7 +60,7 @@ public class ConfrontationServiceImpl implements ConfrontationService {
         confrontationRepository.save(confrontation);
 
         confrontationDetailService.createDetails(confrontation);
-
+        confrontationDetailService.createOpponentDetails(confrontation);
     }
 
     @Override

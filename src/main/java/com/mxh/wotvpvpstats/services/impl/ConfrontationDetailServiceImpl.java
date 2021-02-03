@@ -28,6 +28,10 @@ public class ConfrontationDetailServiceImpl implements ConfrontationDetailServic
     CharacterBuiltJobRepository characterBuiltJobRepository;
     @Autowired
     CharacterJobConfrontationDetailRepository characterJobConfrontationDetailRepository;
+    @Autowired
+    OpponentFormationCharacterRepository opponentFormationCharacterRepository;
+    @Autowired
+    OpponentConfrontationDetailRepository opponentConfrontationDetailRepository;
 
     @Override
     public void createDetails(Confrontation confrontation) {
@@ -68,6 +72,21 @@ public class ConfrontationDetailServiceImpl implements ConfrontationDetailServic
                 characterJobConfrontationDetail.setCharacterJob(characterBuiltJob.getCharacterJob());
                 characterJobConfrontationDetailRepository.save(characterJobConfrontationDetail);
             });
+        });
+    }
+
+    @Override
+    public void createOpponentDetails(Confrontation confrontation) {
+
+        var opponentFormation = confrontation.getOpponentFormation();
+        List<OpponentFormationCharacter> opponentFormationCharacters = opponentFormationCharacterRepository.findByOpponentFormationId(opponentFormation.getId());
+        opponentFormationCharacters.forEach(opponentFormationCharacter -> {
+            var opponentConfrontationDetail = new OpponentConfrontationDetail();
+            opponentConfrontationDetail.setConfrontation(confrontation);
+            opponentConfrontationDetail.setPosition(opponentFormationCharacter.getOrder());
+            opponentConfrontationDetail.setName(opponentFormationCharacter.getCharacter().getName());
+            opponentConfrontationDetail.setElement(opponentFormationCharacter.getCharacter().getElement());
+            opponentConfrontationDetailRepository.save(opponentConfrontationDetail);
         });
     }
 }
