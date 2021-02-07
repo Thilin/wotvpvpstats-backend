@@ -10,5 +10,4 @@ public interface ConfrontationService {
 
     List<ConfrontationResultDTO> findAllResultsByUserId(Long userId);
 
-    List<Long> findFormationTimes(List<Long> ids);
 }

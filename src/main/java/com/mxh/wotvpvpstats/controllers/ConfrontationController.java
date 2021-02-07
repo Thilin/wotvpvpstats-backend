@@ -28,8 +28,4 @@ public class ConfrontationController {
         return confrontationService.findAllResultsByUserId(userId);
     }
 
-    @GetMapping
-    public List<Long> getFormationTimes(@RequestParam List<Long> ids){
-        return confrontationService.findFormationTimes(ids);
-    }
 }

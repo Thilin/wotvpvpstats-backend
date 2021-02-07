@@ -126,9 +126,4 @@ public class ConfrontationServiceImpl implements ConfrontationService {
         });
         return resultDTOS;
     }
-
-    @Override
-    public List<Long> findFormationTimes(List<Long> ids) {
-        return confrontationCharacterFormationRepository.findFormationsByCharacterIds(ids);
-    }
 }
