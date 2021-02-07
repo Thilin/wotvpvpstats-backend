@@ -6,6 +6,7 @@ import com.mxh.wotvpvpstats.services.ConfrontationDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -32,8 +33,11 @@ public class ConfrontationDetailServiceImpl implements ConfrontationDetailServic
     OpponentFormationCharacterRepository opponentFormationCharacterRepository;
     @Autowired
     OpponentConfrontationDetailRepository opponentConfrontationDetailRepository;
+    @Autowired
+    ConfrontationCharacterFormationRepository confrontationCharacterFormationRepository;
 
     @Override
+    @Transactional
     public void createDetails(Confrontation confrontation) {
 
         List<FormationCharacterBuilt> formationCharacterBuilts = formationCharacterBuiltRepository.findAllByFormationId(confrontation.getFormation().getId());
@@ -76,6 +80,7 @@ public class ConfrontationDetailServiceImpl implements ConfrontationDetailServic
     }
 
     @Override
+    @Transactional
     public void createOpponentDetails(Confrontation confrontation) {
 
         var opponentFormation = confrontation.getOpponentFormation();

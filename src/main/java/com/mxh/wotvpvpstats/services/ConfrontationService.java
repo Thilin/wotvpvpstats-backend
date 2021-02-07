@@ -9,4 +9,6 @@ public interface ConfrontationService {
     void create(Long userId, CreateConfrontationDTO dto);
 
     List<ConfrontationResultDTO> findAllResultsByUserId(Long userId);
+
+    List<Long> findFormationTimes(List<Long> ids);
 }

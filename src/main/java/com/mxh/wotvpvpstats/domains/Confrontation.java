@@ -50,4 +50,8 @@ public class Confrontation {
     @OneToOne
     @JoinColumn(name = "CON_USR_ID", referencedColumnName = "USR_ID")
     private User user;
+
+    @OneToOne
+    @JoinColumn(name = "CON_CCF_ID", referencedColumnName = "CCF_ID")
+    private ConfrontationCharacterFormation confrontationCharacterFormation;
 }

@@ -27,4 +27,9 @@ public class ConfrontationController {
     public List<ConfrontationResultDTO> findAllResultsByUserId(@PathVariable Long userId){
         return confrontationService.findAllResultsByUserId(userId);
     }
+
+    @GetMapping
+    public List<Long> getFormationTimes(@RequestParam List<Long> ids){
+        return confrontationService.findFormationTimes(ids);
+    }
 }
