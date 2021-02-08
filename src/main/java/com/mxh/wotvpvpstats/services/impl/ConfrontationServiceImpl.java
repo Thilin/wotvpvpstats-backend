@@ -4,10 +4,7 @@ import com.mxh.wotvpvpstats.domains.Confrontation;
 import com.mxh.wotvpvpstats.domains.ConfrontationCharacterFormation;
 import com.mxh.wotvpvpstats.domains.FormationCharacterBuilt;
 import com.mxh.wotvpvpstats.domains.OpponentFormationCharacter;
-import com.mxh.wotvpvpstats.projections.dtos.CharacterBuiltFormationConfrontationDTO;
-import com.mxh.wotvpvpstats.projections.dtos.CreateConfrontationDTO;
-import com.mxh.wotvpvpstats.projections.dtos.ConfrontationResultDTO;
-import com.mxh.wotvpvpstats.projections.dtos.OpponentCompositionDTO;
+import com.mxh.wotvpvpstats.projections.dtos.*;
 import com.mxh.wotvpvpstats.repositories.*;
 import com.mxh.wotvpvpstats.services.ConfrontationDetailService;
 import com.mxh.wotvpvpstats.services.ConfrontationService;
@@ -125,5 +122,10 @@ public class ConfrontationServiceImpl implements ConfrontationService {
             resultDTOS.add(result);
         });
         return resultDTOS;
+    }
+
+    @Override
+    public List<TopWinFormationsDTO> findTopFormationByConfrontationTypeId(Long id) {
+        return confrontationCharacterFormationRepository.findTopFormationByConfrontationTypeId(id);
     }
 }
