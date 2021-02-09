@@ -24,14 +24,9 @@ public class ConfrontationController {
         confrontationService.create(userId, dto);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/all/{userId}")
     public List<ConfrontationResultDTO> findAllResultsByUserId(@PathVariable Long userId){
         return confrontationService.findAllResultsByUserId(userId);
     }
-
-    @GetMapping("/type/{typeId}/top/formations")
-    public List<TopWinFormationsDTO> topWinFormationsByConfrontationType(@PathVariable Long typeId){
-        return confrontationService.findTopFormationByConfrontationTypeId(typeId);
-    }
-
 }

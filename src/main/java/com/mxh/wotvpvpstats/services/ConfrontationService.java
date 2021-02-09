@@ -11,6 +11,4 @@ public interface ConfrontationService {
 
     List<ConfrontationResultDTO> findAllResultsByUserId(Long userId);
 
-    List<TopWinFormationsDTO> findTopFormationByConfrontationTypeId(Long id);
-
 }

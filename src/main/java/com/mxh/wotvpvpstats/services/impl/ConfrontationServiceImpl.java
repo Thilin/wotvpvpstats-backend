@@ -53,9 +53,9 @@ public class ConfrontationServiceImpl implements ConfrontationService {
         var formation = formationRepository.getOne(dto.getUserFormationId());
 
         List<FormationCharacterBuilt> formationCharacterBuilts = formationCharacterBuiltRepository.findAllByFormationId(formation.getId());
-        var name1 =         formationCharacterBuilts.get(0).getCharacterBuilt().getCharacter().getName();
-        var name2 =         formationCharacterBuilts.get(1).getCharacterBuilt().getCharacter().getName();
-        var name3 =         formationCharacterBuilts.get(2).getCharacterBuilt().getCharacter().getName();
+        var name1 = formationCharacterBuilts.get(0).getCharacterBuilt().getCharacter().getName();
+        var name2 = formationCharacterBuilts.get(1).getCharacterBuilt().getCharacter().getName();
+        var name3 = formationCharacterBuilts.get(2).getCharacterBuilt().getCharacter().getName();
         var optionalConfrontationCharacterFormation = confrontationCharacterFormationRepository.findByName1AndName2AndName3(name1, name2, name3);
         if(optionalConfrontationCharacterFormation.isEmpty()){
             var confrontationCharacterFormation = new ConfrontationCharacterFormation();
@@ -104,6 +104,8 @@ public class ConfrontationServiceImpl implements ConfrontationService {
                 var dto = new CharacterBuiltFormationConfrontationDTO();
                 dto.setName(built.getCharacterBuilt().getCharacter().getName());
                 dto.setPosition(built.getOrder());
+                dto.setEsper(built.getCharacterBuilt().getEsper().getName());
+                dto.setVisionCard(built.getCharacterBuilt().getVisionCard().getName());
                 dtosList.add(dto);
             });
             result.setComposition(dtosList);
@@ -122,10 +124,5 @@ public class ConfrontationServiceImpl implements ConfrontationService {
             resultDTOS.add(result);
         });
         return resultDTOS;
-    }
-
-    @Override
-    public List<TopWinFormationsDTO> findTopFormationByConfrontationTypeId(Long id) {
-        return confrontationCharacterFormationRepository.findTopFormationByConfrontationTypeId(id);
     }
 }

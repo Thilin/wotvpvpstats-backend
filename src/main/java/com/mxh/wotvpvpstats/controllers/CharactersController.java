@@ -32,11 +32,4 @@ public class CharactersController {
     public List<CharacterDTO> findAll(){
         return characterService.findAll();
     }
-
-//    @ResponseStatus(HttpStatus.OK)
-//    @GetMapping(value = "/{userId}/build/all", produces = "application/json")
-//    @Operation(summary = "List all", description = "List all character built that the user created")
-//    public List<CharacterBuildResponseDTO> findAllCharacterBuiltByUserId(@PathVariable Long userId){
-//        return characterService.findAllCharacterBuiltByUserId(userId);
-//    }
 }

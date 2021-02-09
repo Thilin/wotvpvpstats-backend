@@ -3,13 +3,13 @@ package com.mxh.wotvpvpstats.services.impl;
 import com.mxh.wotvpvpstats.domains.Formation;
 import com.mxh.wotvpvpstats.domains.FormationCharacterBuilt;
 import com.mxh.wotvpvpstats.projections.dtos.FormationDTO;
-import com.mxh.wotvpvpstats.repositories.CharacterBuiltRepository;
-import com.mxh.wotvpvpstats.repositories.FormationCharacterBuiltRepository;
-import com.mxh.wotvpvpstats.repositories.FormationRepository;
-import com.mxh.wotvpvpstats.repositories.UserRepository;
+import com.mxh.wotvpvpstats.projections.dtos.TopWinFormationsDTO;
+import com.mxh.wotvpvpstats.repositories.*;
 import com.mxh.wotvpvpstats.services.FormationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class FormationServiceImpl implements FormationService {
@@ -20,6 +20,8 @@ public class FormationServiceImpl implements FormationService {
     CharacterBuiltRepository characterBuiltRepository;
     @Autowired
     FormationCharacterBuiltRepository formationCharacterBuiltRepository;
+    @Autowired
+    ConfrontationCharacterFormationRepository confrontationCharacterFormationRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -43,5 +45,10 @@ public class FormationServiceImpl implements FormationService {
             formationCharacterBuilt.setCharacterBuilt(characterBuiltRepository.getOne(characterPosition.getCharacterBuiltId()));
             formationCharacterBuiltRepository.save(formationCharacterBuilt);
         });
+    }
+
+    @Override
+    public List<TopWinFormationsDTO> findTopFormationByConfrontationTypeId(Long id) {
+        return confrontationCharacterFormationRepository.findTopFormationByConfrontationTypeId(id);
     }
 }
