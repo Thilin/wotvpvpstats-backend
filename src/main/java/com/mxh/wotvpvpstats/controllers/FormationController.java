@@ -26,9 +26,16 @@ public class FormationController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/top/confrontationType/{typeId}", produces = "application/json")
-    @Operation(summary = "Show top Formations", description = "Show the top formations with most wins by confrontationTypeId")
-    public List<TopWinFormationsDTO> topWinFormationsByConfrontationType(@PathVariable Long typeId){
-        return formationService.findTopFormationByConfrontationTypeId(typeId);
+    @GetMapping(value = "/common/confrontationType/{typeId}", produces = "application/json")
+    @Operation(summary = "Show most common Formations", description = "Show the most common formations by confrontationTypeId")
+    public List<TopWinFormationsDTO> findMostCommonTeamsByConfrontationId(@PathVariable Long typeId){
+        return formationService.findMostCommonTeamsByConfrontationId(typeId);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "top/confrontationType/{typeId}", produces = "application/json")
+    @Operation(summary = "Show top winrate formations", description = "List top winrate formations by confrontationTypeId")
+    public List<TopWinFormationsDTO> findTopWinRateTeamsByConfrontationId(@PathVariable Long typeId){
+        return formationService.findTopTeamsWinRateByConfrontationId(typeId);
     }
 }

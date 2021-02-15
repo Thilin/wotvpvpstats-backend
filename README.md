@@ -1,68 +1,10 @@
 #Project to generate pvp stats according the player's input.
 
 ###Tables mapped
-[x]Character
-
-[x]Character Built
-
-[x]Character built confrontation detail
-
-[x]Character built equipment
-
-[x]character job
-
-[x]confrontation
-
-[x]confrontation type
-
-[x]element
-
-[x]equipment
-
-[x]equipment category
-
-[x]equipment type
-
-[x]esper
-
-[x]formation
-
-[x]formation character built
-
-[x]job
-
-[x]map
-
-[x]oponent
-
-[x]oponent formation
-
-[x]oponent formation character
-
-[x]reaction
-
-[x]support ability
-
-[x]user
-
-[x]visioncard
-
-[]Character built equipment confrontation detail
-
-[]character built support ability
-
-[]character equipment category
-
-[]support ability character built confrontation detail
-
-[]oponent confrontation detail
-
-[]confrontation detail
-
 ---------------
 Funções Globais por Mapa:
-1. Ranker times mais comuns.
-2. Rankear winrate dos melhores times.
+1. Ranker times mais comuns. [x]
+2. Rankear winrate dos melhores times. [x]
 3. Rankear personagens mais presentes nos times.
 4. Rankear Vision Cards mais usados.
 5. Rankear Espers mais usados.

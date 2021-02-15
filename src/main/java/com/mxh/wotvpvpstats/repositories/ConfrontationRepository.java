@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface ConfrontationRepository extends JpaRepository<Confrontation, Long> {
     List<Confrontation> findByUserId(Long userId);
+
+    List<Confrontation> findByConfrontationTypeId(Long id);
+
+    List<Confrontation> findByConfrontationTypeIdAndConfrontationCharacterFormationId(Long id, Long formationId);
 }

@@ -16,8 +16,8 @@ public interface ConfrontationCharacterFormationRepository extends JpaRepository
     @Query("""
             select new com.mxh.wotvpvpstats.projections.dtos.TopWinFormationsDTO(count(c.id), ccf.name1, ccf.name2, ccf.name3)  from ConfrontationCharacterFormation ccf
             inner join Confrontation c on c.confrontationCharacterFormation.id = ccf.id
-            where c.isWin = true and c.confrontationType.id = :id
+            where c.confrontationType.id = :id
             group by c.confrontationType.id order by count(c.id) desc 
             """)
-    List<TopWinFormationsDTO> findTopFormationByConfrontationTypeId(@Param("id") Long id);
+    List<TopWinFormationsDTO> findMostCommonTeamsByConfrontationId(@Param("id") Long id);
 }
